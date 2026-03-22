@@ -14,10 +14,12 @@ public sealed class PostgreSqlTestContainer : IAsyncLifetime
 
     public PostgreSqlTestContainer()
     {
+        // Palavra-passe gerada em runtime (contentor descartável); evita literais que scanners marcam como segredos.
+        var containerPassword = $"tc_{Guid.NewGuid():N}";
         _postgreSqlContainer = new PostgreSqlBuilder("postgres:15")
             .WithDatabase($"ftc_core_test_{Guid.NewGuid():N}")
             .WithUsername("postgres")
-            .WithPassword("postgres")
+            .WithPassword(containerPassword)
             .WithPortBinding(0, true) // Porta aleatória no host para evitar conflitos
             .Build();
     }
