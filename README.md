@@ -1,249 +1,187 @@
 <div align="center">
-   <h1>
-      NOME DO PROJETO
-   </h1>
-  <!-- 
-  <h1>
-    <img width="490" height="110" alt="dopme io" src="https://github.com/dopme-io/dopmeRepo/blob/main/assests/dopme.png" />
-  </h1>
-  </br>
-  <img width="663" height="69" src="" /> 
-   -->
-  
-  [![.NET](https://github.com/dopme-io/dopmeSite/actions/workflows/dotnet.yml/badge.svg)](https://github.com/dopme-io/dopmeSite/actions/workflows/dotnet.yml)
-  [![CI - Build & Test](https://github.com/dopme-io/dopmeSite/actions/workflows/ci.yml/badge.svg)](https://github.com/dopme-io/dopmeSite/actions/workflows/ci.yml)
-  [![Dependencies Check & Update](https://github.com/dopme-io/dopmeSite/actions/workflows/dependencies.yml/badge.svg)](https://github.com/dopme-io/dopmeSite/actions/workflows/dependencies.yml)
-  [![Deploy to CloudFlare Pages](https://github.com/dopme-io/dopmeSite/actions/workflows/deploy.yml/badge.svg)](https://github.com/dopme-io/dopmeSite/actions/workflows/deploy.yml)
-  [![Monitoring & Performance](https://github.com/dopme-io/dopmeSite/actions/workflows/monitoring.yml/badge.svg)](https://github.com/dopme-io/dopmeSite/actions/workflows/monitoring.yml)
-  
-  ![Status do build](https://img.shields.io/github/actions/workflow/status/dopme-io/REPO/workflow.yml)
-  ![Licença](https://img.shields.io/github/license/dopme-io/REPO)
-  ![Versão](https://img.shields.io/github/package-json/v/dopme-io/REPO)
+   <h1>Dez tecnologias essenciais em .NET</h1>
 
-   **Repositório base/template** com CI/CD completo para qualquer tecnologia backend e frontend.  
-   Inclui workflows de integração contínua, deploy, gerenciamento de dependências e monitoramento prontos para uso.
+  [![CI - Build & Test](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/ci.yml/badge.svg)](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/ci.yml)
+  [![Dependencies Check & Update](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/dependencies.yml/badge.svg)](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/dependencies.yml)
+  [![Monitoring & Performance](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/monitoring.yml/badge.svg)](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/monitoring.yml)
+  [![CD - Deploy](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/cd.yml/badge.svg)](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/cd.yml)
+  [![Auto Tag & Version](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/auto-tag.yml/badge.svg)](https://github.com/dop-s/dopTenEssentialTechNet/actions/workflows/auto-tag.yml)
+
+  ![Licença](https://img.shields.io/github/license/dop-s/dopTenEssentialTechNet)
+
+   Repositório com <strong>projetos .NET 10</strong> (console, APIs web e testes) que exploram técnicas e bibliotecas recorrentes no ecossistema .NET moderno.
 </div>
-</br>
 
+<br>
 
-## 📑 Índice
+## Índice
 
-1. [Visão Geral](#visão-geral)
-2. [CI/CD e Workflows](#cicd-e-workflows)
-3. [Instalação](#instalação)
-4. [Como Usar](#como-usar)
-5. [Configuração](#configuração)
-6. [Contribuições](#contribuições)
-7. [Artigos & Conteúdos](#artigos--conteúdos)
-8. [Licença](#licença)
-9. [Contato](#contato)
+1. [Visão geral](#visão-geral)
+2. [Projetos na solução](#projetos-na-solução)
+3. [Requisitos](#requisitos)
+4. [Instalação e build](#instalação-e-build)
+5. [Como executar um projeto](#como-executar-um-projeto)
+6. [CI/CD e workflows](#cicd-e-workflows)
+7. [Documentação adicional](#documentação-adicional)
+8. [Contribuições](#contribuições)
+9. [Artigos e conteúdos](#artigos-e-conteúdos)
+10. [Licença](#licença)
+11. [Contato](#contato)
 
-## Visão Geral
+## Visão geral
 
-O **dopBase** é um repositório base/template completo com pipelines de CI/CD prontos para uso, suportando múltiplas tecnologias e frameworks. Este projeto fornece uma base sólida para iniciar qualquer aplicação com as melhores práticas de DevOps.
+O **dopTenEssentialTechNet** agrupa vários projetos independentes, todos direcionados ao **.NET 10** (`net10.0`). A maior parte são **aplicativos de console**; há também **APIs minimais** (por exemplo, FastEndpoints ou EF Core com HTTP) quando o tema pede hospedagem web. Cada pasta corresponde a um tema (`Span`, configuração, resiliência HTTP, testes com containers, pooling de `DbContext`, logging gerado em compile time, entre outros), para estudo, artigos ou referência rápida.
 
-### 🎯 Como Usar Este Template
+A solução principal está em `dopTenEssentialTechNet.sln` na raiz do repositório.
 
-Este repositório serve como base para novos projetos. Para usá-lo:
+## Projetos na solução
 
-1. **Clone ou use como template**:
-   ```bash
-   # Opção 1: Clone direto
-   git clone https://github.com/daniloopinheiro/dopBase.git meu-novo-projeto
-   
-   # Opção 2: Use o botão "Use this template" no GitHub
-   ```
+| Projeto | Tema (foco) |
+|---------|-------------|
+| **SubStringSpan** | Strings e `Span`/`Memory` para código eficiente e com menos alocações |
+| **OptionsConfig** | Padrão Options e `IConfiguration` |
+| **BackgroundServer** | Serviços em segundo plano com `Host` / hospedagem genérica |
+| **WorkflowCore** | Orquestração de fluxos com WorkflowCore |
+| **VerticalSliceFastEndpoints** | Organização vertical slice com FastEndpoints |
+| **HTTPolly** | Chamadas HTTP com políticas de resiliência (Polly) |
+| **Flurl** | Cliente HTTP fluente com Flurl |
+| **TddContainers** | Testes de integração com Testcontainers |
+| **DynamicDapper** | Acesso a dados com Dapper e cenários dinâmicos |
+| **ContextPool** | EF Core com `AddDbContextPool`, SQL Server e Minimal API |
+| **SourceGeneratedLogging** | Logging com `[LoggerMessage]` (source generator de alto desempenho) |
 
-2. **Adicione seu código**: Os workflows detectam automaticamente a tecnologia e configuram tudo
-3. **Configure secrets** (opcional): Para deploy automático
-4. **Comece a desenvolver**: Os workflows funcionam imediatamente!
+## Requisitos
 
-> **Nota**: Arquivos de configuração específicos (como `k6-test.js`, `.pa11yci.json`, `sonar-project.properties`) não estão incluídos. Você pode criá-los conforme necessário para seu projeto específico.
+- [.NET SDK 10](https://dotnet.microsoft.com/download) (TFM `net10.0`)
 
-### ✨ Recursos Principais
+Verifique a versão instalada:
 
-- 🔄 **CI/CD Automático**: Workflows prontos para build, teste e deploy
-- 🌐 **Multi-tecnologia**: Suporta Node.js, Python, .NET, Java, Go e mais
-- 🔒 **Segurança**: Scans automáticos de vulnerabilidades
-- 📦 **Gerenciamento de Dependências**: Atualização automática e verificação de segurança
-- 🤖 **Automação de PRs**: Labeling, validações e estatísticas automáticas
-- 📊 **Monitoramento**: Performance, acessibilidade e qualidade de código
-- 🚀 **Deploy Automático**: Integração com Vercel, Netlify, Heroku, AWS, Azure e mais
-
-## CI/CD e Workflows
-
-Este projeto inclui workflows completos de GitHub Actions para automação de todo o ciclo de desenvolvimento.
-
-### 🚀 Workflows Disponíveis
-
-#### 1. **CI - Build & Test** (`ci.yml`)
-- ✅ Detecção automática de tecnologias
-- 🏗️ Build automático para backend e frontend
-- 🧪 Execução de testes
-- 📊 Análise de código (Linting)
-- 🔒 Scan de segurança com Trivy
-- 📈 Análise de qualidade com SonarCloud
-
-#### 2. **CD - Deploy** (`cd.yml`)
-- 🚀 Deploy automático para múltiplas plataformas
-- 🐳 Build e push de imagens Docker
-- 📝 Criação automática de releases
-- 🏷️ Geração de changelog
-
-#### 3. **Dependencies Check** (`dependencies.yml`)
-- 🔍 Verificação de vulnerabilidades
-- 📦 Detecção de pacotes desatualizados
-- 🔄 Atualização automática de dependências
-- ⚖️ Verificação de licenças
-
-#### 4. **PR Automation** (`pr-automation.yml`)
-- 🏷️ Labeling automático
-- 📏 Validação de título semântico
-- 📊 Estatísticas de mudanças
-- 🤖 Auto-merge de PRs do Dependabot
-
-#### 5. **Monitoring** (`monitoring.yml`)
-- 🔍 Lighthouse audit
-- ⚡ Testes de performance com k6
-- 🔒 Verificação de SSL
-- 📊 Análise de cobertura de código
-
-#### 6. **Auto Tag & Version** (`auto-tag.yml`) ⭐ NOVO
-- 🏷️ Criação automática de tags quando há merge para `main`
-- 📊 Versionamento semântico baseado em commits convencionais
-- 🔄 Detecta automaticamente o tipo de versão (major, minor, patch)
-- 🎯 Integrado com CD para releases automáticas
-
-### 📚 Documentação dos Workflows
-
-- 📖 [Guia Completo](.github/README.md) - Documentação detalhada de todos os workflows
-- 🚀 [Quick Start](.github/QUICKSTART.md) - Comece em 5 minutos
-- 🏷️ [Auto Versioning](.github/AUTO_VERSIONING.md) - Tags e releases automáticas ⭐ NOVO
-- 📦 [Release Guide](.github/RELEASE_GUIDE.md) - Como criar releases
-- 📛 [Badges](.github/BADGES.md) - Badges para seu README
-
-### 🔧 Tecnologias Suportadas
-
-| Categoria | Tecnologias |
-|-----------|-------------|
-| **Frontend** | Node.js, React, Vue, Angular, Svelte, Next.js, Nuxt.js |
-| **Backend** | Node.js, Python, .NET, Java, Go |
-| **Gerenciadores** | npm, yarn, pnpm, pip, Maven, Gradle, NuGet, Go modules |
-| **Containers** | Docker, Docker Compose |
-| **Deploy** | Vercel, Netlify, GitHub Pages, Heroku, AWS, Azure |
-
-### ⚡ Início Rápido
-
-1. **Clone o repositório**
-2. **Os workflows já estão configurados** em `.github/workflows/`
-3. **Faça seu primeiro push**:
-   ```bash
-   git add .
-   git commit -m "feat: initial commit"
-   git push origin main
-   ```
-4. **Veja os workflows em ação** na aba Actions do GitHub
-
-### 🎯 Fluxo Completo de Release Automática
-
-Este repositório possui um fluxo completo de automação:
-
-```
-1. Desenvolver → 2. PR → 3. Merge para main → 4. Auto Tag → 5. Auto Release
-```
-
-**Exemplo prático:**
 ```bash
-# 1. Criar branch e desenvolver
-git checkout -b feature/nova-funcionalidade
-git commit -m "feat: adiciona funcionalidade incrível"
-
-# 2. Criar PR e fazer merge para main
-
-# 3. Automação acontece:
-#    ✅ Auto Tag detecta "feat:" e cria tag v1.1.0
-#    ✅ CD detecta tag e cria release automaticamente
-#    ✅ Changelog gerado com base nos commits
+dotnet --version
 ```
 
-Para mais detalhes, consulte o [Auto Versioning Guide](.github/AUTO_VERSIONING.md).
+## Instalação e build
 
----
+```bash
+git clone https://github.com/daniloopinheiro/dopTenEssentialTechNet
+cd dopTenEssentialTechNet
+dotnet restore
+dotnet build
+```
 
-## Instalação
+Para compilar apenas a solução:
 
-Forneça instruções claras sobre como instalar o seu software.  
-Inclua pré-requisitos, como dependências de software ou bibliotecas necessárias.  
+```bash
+dotnet build dopTenEssentialTechNet.sln
+```
+
+## Como executar um projeto
+
+Substitua `NomeDoProjeto` por uma das pastas listadas acima (por exemplo, `SubStringSpan`):
+
+```bash
+dotnet run --project NomeDoProjeto/NomeDoProjeto.csproj
+```
+
+Na pasta **WorkflowCore** o arquivo de projeto é `WorkflowCore.App.csproj` (nome escolhido para não conflitar com o pacote NuGet **WorkflowCore**).
+
+Na pasta **Flurl** o arquivo é `FlurlDemo.App.csproj` (o nome **Flurl** conflita com o pacote NuGet **Flurl** usado pelo **Flurl.Http**).
+
+O projeto **TddContainers** é de **testes** (xUnit + Testcontainers). Execute com `dotnet test` — é necessário **Docker** em execução para subir o PostgreSQL em container.
+
+**APIs web (Minimal API / ASP.NET Core):**
+
+| Projeto | URL predefinida (desenvolvimento) |
+|---------|-----------------------------------|
+| **VerticalSliceFastEndpoints** | `http://localhost:5088` |
+| **ContextPool** | `http://localhost:5089` |
+
+**SQL Server (LocalDB ou instância própria):**
+
+- **DynamicDapper** — connection string em `ConnectionStrings:Default` (`appsettings.json`).
+- **ContextPool** — `ConnectionStrings:DefaultConnection`; o arranque cria a base e insere dados de exemplo. Ajuste a string se não usar LocalDB.
+
+**Logging com source generator:**
+
+- **SourceGeneratedLogging** — `dotnet run` executa uma chamada gerada em compile time (`[LoggerMessage]`) e imprime na consola (nível Debug).
 
 Exemplo:
 
 ```bash
-$ git clone https://github.com/seu-usuario/nome-do-projeto.git
-$ cd nome-do-projeto
-````
-
-## Como Usar
-
-Explique como usar o seu software em detalhes.
-Forneça exemplos de código, comandos de linha ou capturas de tela para demonstrar o uso típico do software.
-
-Exemplo:
-
-```bash
-# Exemplo de execução
-dotnet run
+dotnet run --project SubStringSpan/SubStringSpan.csproj
 ```
 
-Isso iniciará o servidor de desenvolvimento.
+## CI/CD e workflows
 
-## Configuração
+O repositório inclui workflows em [`.github/workflows/`](.github/workflows/) para integração contínua, dependências, monitoramento, deploy e versionamento. Resumo:
 
-Se o seu software requer configuração adicional além da instalação padrão, explique aqui como configurá-lo.
-Isso pode incluir variáveis de ambiente, arquivos de configuração ou qualquer ajuste necessário para personalizar o comportamento do software.
+| Workflow | Arquivo | Função principal |
+|----------|---------|------------------|
+| CI - Build & Test | [`ci.yml`](.github/workflows/ci.yml) | Build, testes e verificações de qualidade |
+| CD - Deploy | [`cd.yml`](.github/workflows/cd.yml) | Entrega e artefatos de deploy |
+| Dependencies Check & Update | [`dependencies.yml`](.github/workflows/dependencies.yml) | Dependências e atualizações |
+| Monitoring & Performance | [`monitoring.yml`](.github/workflows/monitoring.yml) | Monitoramento e performance |
+| PR Automation | [`pr-automation.yml`](.github/workflows/pr-automation.yml) | Automação de pull requests |
+| Auto Tag & Version | [`auto-tag.yml`](.github/workflows/auto-tag.yml) | Tags e versionamento |
+| Auto Release | [`auto-release.yml`](.github/workflows/auto-release.yml) | Releases automáticas |
+| Create Version Tags | [`create-tags.yml`](.github/workflows/create-tags.yml) | Criação de tags de versão |
+| Create Release | [`release.yml`](.github/workflows/release.yml) | Criação de releases |
+
+Documentação complementar:
+
+- [README dos workflows](.github/README_WORKFLOWS.md)
+- [Início rápido](.github/QUICKSTART.md)
+- [Versionamento automático](.github/AUTO_VERSIONING.md)
+- [Guia de release](.github/RELEASE_GUIDE.md)
+- [Badges](.github/BADGES.md)
+
+## Documentação adicional
+
+- [Artigo](ARTICLE.md) — contexto editorial sobre o repositório
+- [CHANGELOG](CHANGELOG.md)
+- [Segurança](SECURITY.md)
+- [Contribuição](CONTRIBUTING.md)
 
 ## Contribuições
 
-Explique se você está aberto para contribuições e como outros desenvolvedores podem ajudar.
-Inclua orientações para quem deseja reportar bugs, enviar solicitações de novos recursos ou fazer alterações no código.
+Contribuições são bem-vindas. Consulte [CONTRIBUTING.md](CONTRIBUTING.md) e o [código de conduta](CODE_OF_CONDUCT.md). Para bugs e ideias, use [Issues](https://github.com/dop-s/dopTenEssentialTechNet/issues).
 
-## Artigos & Conteúdos
+## Artigos e conteúdos
 
-* 💼 [LinkedIn](https://www.linkedin.com/in/daniloopinheiro)
-* ✍️ [Medium](https://medium.com/@daniloopinheiro)
-* 💻 [Dev.to](https://dev.to/daniloopinheiro)
-* 📰 [Substack](https://substack.com/@daniloopinheiro)
+* [LinkedIn](https://www.linkedin.com/in/daniloopinheiro)
+* [Medium](https://medium.com/@daniloopinheiro)
+* [Dev.to](https://dev.to/daniloopinheiro)
+* [Substack](https://substack.com/@daniloopinheiro)
 
 ## Licença
 
-MIT License © 2025 [LICENSE.md](https://github.com/daniloopinheiro/dopBase/blob/main/LICENSE.md) — por [Danilo O. Pinheiro](https://www.linkedin.com/in/daniloopinheiro/)
+MIT — veja [LICENSE.md](LICENSE.md).
 
 ## Contato
 
-### 💬 Suporte Técnico
-Para questões técnicas, problemas ou sugestões:
-- **Issues**: [GitHub Issues](https://github.com/daniloopinheiro/dopNetHL7/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/daniloopinheiro/dopNetHL7/discussions)
+### Suporte técnico
 
-### 👨‍💻 Autor
-**Danilo O. Pinheiro**  
-Especialista em .NET, Clean Architecture e Interoperabilidade em Saúde
+- **Issues**: [GitHub Issues](https://github.com/daniloopinheiro/dopTenEssentialTechNet/issues)
 
-- **Email Pessoal**: [daniloopro@gmail.com](mailto:daniloopro@gmail.com)
-- **Email Empresarial**: [devsfree@devsfree.com.br](mailto:devsfree@devsfree.com.br)
+### Autor
+
+**Danilo O. Pinheiro**
+
+- **Email pessoal**: [daniloopro@gmail.com](mailto:daniloopro@gmail.com)
+- **Email empresarial**: [devsfree@devsfree.com.br](mailto:devsfree@devsfree.com.br)
 - **Consultoria**: [contato@dopme.io](mailto:contato@dopme.io)
 - **LinkedIn**: [Danilo O. Pinheiro](https://www.linkedin.com/in/daniloopinheiro/)
 
-### 🏢 Empresas
-- **[DevsFree](https://devsfree.com.br)**: Desenvolvimento de Software
-- **[dopme.io](https://dopme.io)**: Consultoria e Soluções Tecnológicas
+### Empresas
+
+- **[DevsFree](https://devsfree.com.br)**: comunidade de desenvolvedores
+- **[dopme.io](https://dopme.io)**: consultoria e soluções tecnológicas
 
 <div align="center">
 
-**⭐ Se este projeto foi útil, deixe uma estrela no GitHub! ⭐**
-
 <p>
-Feito com ❤️ por <strong>Danilo O. Pinheiro</strong><br/>  
-<a href="https://devsfree.com.br" target="_blank">DevsFree</a> • <a href="https://dopme.io" target="_blank">dopme.io</a>  
+Feito com cuidado por <strong>Danilo O. Pinheiro</strong><br/>
+<a href="https://devsfree.com.br" target="_blank">DevsFree</a> • <a href="https://dopme.io" target="_blank">dopme.io</a>
 </p>
 
 </div>
